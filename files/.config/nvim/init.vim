@@ -44,7 +44,18 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 
 " semantic-based completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
 
 " linting engine
 Plug 'w0rp/ale'

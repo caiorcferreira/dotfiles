@@ -52,9 +52,9 @@ brew install curl
 # Vim ecosystem
 brew install vim
 brew install neovim
+go get -u github.com/stamblerre/gocode
 nvim +PlugClean! +qall
 nvim +silent +PlugInstall +qall
-python3 ~/.config/nvim/plugged/YouCompleteMe/install.py
 
 # Dev utilities
 brew install git
