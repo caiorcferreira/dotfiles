@@ -19,11 +19,19 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+# Install general tools
+brew install coreutils 
+brew install automake 
+brew install autoconf 
+brew install openssl
+brew install libyaml
+brew install readline 
+brew install libxslt 
+brew install libtool 
+brew install unixodbc
+brew install unzip 
 brew install findutils
 brew install cmake
-# Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed
 
 # This is needed for fzf to know how to ignore files listed in .gitignore
@@ -31,36 +39,23 @@ brew install gnu-sed
 # It is also a good CLI tool
 brew install ag
 
-# This is needed for python support on Neovim for YouCompleteMe
-# Please see https://github.com/neovim/neovim/issues/1315
-brew install python@3
-pip3 install --user --upgrade neovim
-pip3 install --user --upgrade pynvim
-
 # Install more recent versions of some macOS tools.
-brew install neovim
 brew install grep
-
-# Install other useful binaries.
-brew install git
 brew install reattach-to-user-namespace
 brew install tmux
 brew install curl
+brew install jq
 
 # Install cmake
-
-# Vim ecosystem
-brew install vim
-brew install neovim
-go get -u github.com/stamblerre/gocode
-nvim +PlugClean! +qall
-nvim +silent +PlugInstall +qall
 
 # Dev utilities
 brew install git
 brew install docker
 brew install docker-compose
 brew install docker-machine
+brew install kubectl
+brew install helm
+brew install asdf
 
 # Setup Cask
 brew install cask

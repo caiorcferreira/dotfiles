@@ -21,3 +21,4 @@ brew cask install flux
 brew cask install notion
 brew cask install 1Password
 brew cask install foxitreader
+brew cask install visual-studio-code
