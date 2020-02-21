@@ -12,7 +12,7 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE" \
 		-avh --no-perms ./files/ ~;
-	source ~/.zshrc;
+	./run-zshrc.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
