@@ -4,4 +4,7 @@ A journey to arcane magic.
 
 ## Usage
 
-First, run `misc.sh`, then `brew.sh`, `cask.sh` and finally `install.sh`.
+1. `misc.sh`
+2. `brew.sh`
+3. `cask.sh`
+4. `install.sh`

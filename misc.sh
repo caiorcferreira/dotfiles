@@ -1,6 +1,10 @@
 # This script installs other programs that are not managed
 # by brew or that didn't fit into any of the other scripts
 
+# Setup directories
+mkdir -p $HOME/workspace
+mkdir -p $HOME/sandbox
+
 # This install Oh My ZSH framework
 if [ -d "$HOME/.oh-my-zsh" ]
 then
