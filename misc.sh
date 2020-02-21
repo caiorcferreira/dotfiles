@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This script installs other programs that are not managed
 # by brew or that didn't fit into any of the other scripts
 
@@ -13,6 +15,8 @@ else
     echo "installing oh my zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+chsh -s $(which zsh)
 
 # This install Oh My ZSH plugins
 if [ -d "$ZSH_CUSTOM/plugins" ]
