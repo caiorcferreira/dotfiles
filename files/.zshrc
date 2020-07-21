@@ -55,4 +55,6 @@ fi
 if [ -d "$HOME/.asdf/plugins/golang" ]
 then
     export GOROOT=$(asdf where golang)/go
+    export GOBIN=$(asdf where golang)/bin
+    export PATH="$GOBIN:$PATH"
 fi
