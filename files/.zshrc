@@ -30,6 +30,13 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Personal directory
 export PATH="$PATH:/opt:$HOME/bin"
 
+# Support GNU sed
+pathDef=$(brew info gnu-sed | grep -o -E "PATH=(.*)")
+if [ ! -z "$pathDef" ]
+then
+  sh -c "export $pathDef"
+fi
+
 # Docker machine and Docker compose ZSH completion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
