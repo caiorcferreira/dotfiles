@@ -6,7 +6,9 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
-alias k=kubectl
+alias k="kubectl"
+alias kc="kubectx"
+alias kn="kubens"
 
 alias c="clear"
 
@@ -16,5 +18,4 @@ alias workspace="cd ~/workspace"
 alias s="cd ~/sandbox"
 alias sand="cd ~/sandbox"
 alias sandbox="cd ~/sandbox"
-alias kc="kubectx"
-alias kn="kubens"
+alias lg="lazygit"
