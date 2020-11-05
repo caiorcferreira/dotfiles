@@ -31,10 +31,10 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="$PATH:/opt:$HOME/bin"
 
 # Support GNU sed
-pathDef=$(brew info gnu-sed | grep -o -E "PATH=(.*)")
-if [ ! -z "$pathDef" ]
+newpath=$(brew info gnu-sed | grep -o -E "PATH=(.*)" | cut -d "=" -d "\"" -f2 | envsubst)
+if [ ! -z "$newpath" ]
 then
-  sh -c "export $pathDef"
+  export PATH=$newpath
 fi
 
 # Docker machine and Docker compose ZSH completion
