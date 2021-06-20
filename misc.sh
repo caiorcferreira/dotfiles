@@ -3,6 +3,9 @@
 # This script installs other programs that are not managed
 # by brew or that didn't fit into any of the other scripts
 
+# Install Xcode Tools
+xcode-select --install
+
 # Setup directories
 mkdir -p $HOME/workspace
 mkdir -p $HOME/sandbox
