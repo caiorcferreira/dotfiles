@@ -3,6 +3,11 @@
 # Like the other install script, this is from Lucas Costa with slight modifications by me
 # https://github.com/lucasfcosta/dotfiles/blob/37da8f2861/brew.sh
 
+if [ -z "$(command -v brew)" ]; then 
+  echo "Installing brew...";
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 echo "Installing brew formulae..."
 
 # Make sure we’re using the latest Homebrew.
