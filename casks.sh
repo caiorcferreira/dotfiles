@@ -17,7 +17,6 @@ brew cask upgrade
 brew cask install google-chrome
 brew cask install spotify
 brew cask install iterm2
-brew cask install flux
 brew cask install notion
 brew cask install 1Password
 brew cask install foxitreader

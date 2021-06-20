@@ -57,10 +57,3 @@ else
     ln -s "$ZSH/custom/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/custom/themes/spaceship.zsh-theme"
 fi
 
-if [ -d "$HOME/.tmux/plugins/tpm" ]
-then
-    echo "tmux tpm is already installed, skipping..."
-else
-    echo "installing tmux tpm..."
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi

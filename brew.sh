@@ -42,7 +42,6 @@ brew install ag
 # Install more recent versions of some macOS tools.
 brew install grep
 brew install reattach-to-user-namespace
-brew install tmux
 brew install curl
 brew install jq
 
@@ -51,7 +50,6 @@ brew install jq
 # Dev utilities
 brew install git
 brew install docker
-brew install docker-compose
 brew install docker-machine
 brew install kubectl
 brew install helm

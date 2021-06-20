@@ -43,9 +43,6 @@ autoload -Uz compinit && compinit -i
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
-# Github Token
-export GH_TOKEN=503393c1fbd05af873c7c6d0a18e86c4d5e1a42e
-
 # Python Path
 export PATH="/Users/caioferreira/Library/Python/3.7/bin:$PATH"
 
@@ -64,4 +61,11 @@ then
     export GOROOT=$(asdf where golang)/go
     export GOBIN=$(asdf where golang)/bin
     export PATH="$GOBIN:$PATH"
+fi
+
+# Set rust from asdf plugin
+if [ -d "$HOME/.asdf/plugins/rust" ]
+then
+    export CARGO_HOME="$(asdf where rust)/.cargo"
+    export PATH="$(asdf where rust)/bin:$CARGO_HOME/bin:$PATH"
 fi
