@@ -57,6 +57,7 @@ brew install jq
 
 # Dev utilities
 brew install git
+brew install lazygit
 brew install docker
 brew install docker-machine
 brew install kubectl
