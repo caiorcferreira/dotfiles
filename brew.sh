@@ -37,6 +37,11 @@ brew install findutils
 brew install cmake
 brew install gnu-sed
 
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+
 # This is needed for fzf to know how to ignore files listed in .gitignore
 # and know how to show hidden files
 # It is also a good CLI tool
@@ -55,6 +60,7 @@ brew install git
 brew install docker
 brew install docker-machine
 brew install kubectl
+brew install kubectx
 brew install helm
 brew install asdf
 
