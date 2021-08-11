@@ -25,12 +25,10 @@ brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install general tools
-brew install coreutils 
 brew install automake 
 brew install autoconf 
 brew install openssl
 brew install libyaml
-brew install readline 
 brew install libxslt 
 brew install libtool 
 brew install unixodbc
@@ -59,9 +57,6 @@ brew install docker-machine
 brew install kubectl
 brew install helm
 brew install asdf
-
-# Setup Cask
-brew install cask
 
 # Remove outdated versions from the cellar.
 brew cleanup

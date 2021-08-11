@@ -10,14 +10,11 @@ echo "Installing applications through brew casks..."
 # Make sure we’re using the latest Homebrew.
 brew update
 
-# Upgrade any already-installed casks
-brew cask upgrade
-
 # Time for some action
-brew cask install google-chrome
-brew cask install spotify
-brew cask install iterm2
-brew cask install notion
-brew cask install 1Password
-brew cask install foxitreader
-brew cask install visual-studio-code
+brew install google-chrome
+brew install spotify
+brew install iterm2
+brew install notion
+brew install 1Password
+brew install foxitreader
+brew install visual-studio-code
