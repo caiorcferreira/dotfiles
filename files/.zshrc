@@ -25,6 +25,7 @@ if [ -f ~/.aliases ]; then
 fi
 
 # Homebrew setup
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Personal directory
