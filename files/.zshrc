@@ -16,6 +16,7 @@ plugins=(
 )
 
 export SPACESHIP_KUBECTL_SHOW=true
+export SPACESHIP_KUBECTL_VERSION_SHOW=false
 
 source $ZSH/oh-my-zsh.sh
 
