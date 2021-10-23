@@ -27,6 +27,8 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # Homebrew setup
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
