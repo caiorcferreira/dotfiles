@@ -10,7 +10,7 @@ ZSH_THEME="spaceship"
 plugins=(
   z
   git
-  osx
+  macos
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
