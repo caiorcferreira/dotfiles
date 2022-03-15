@@ -27,7 +27,9 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+if [ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
 
 # Homebrew setup
 export PATH="/opt/homebrew/bin:$PATH"
@@ -58,7 +60,7 @@ export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 # Set JAVA_HOME from asdf plugin
 if [ -d "$HOME/.asdf/plugins/java" ]
 then
-    . ~/.asdf/plugins/java/set-java-home.sh
+    . ~/.asdf/plugins/java/set-java-home.zsh
 fi
  
 # Set GOROOT from asdf plugin
