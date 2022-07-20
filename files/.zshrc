@@ -36,6 +36,11 @@ fi
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# Python setup
+export PATH="/Users/caio.cavalcante/.local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.8/bin:${PATH}"
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # Personal directory
 export PATH="$PATH:/opt:$HOME/bin"
 

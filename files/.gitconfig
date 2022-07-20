@@ -25,6 +25,7 @@
     ap = add . -p
     #############
     s = status
+    sw = switch
     #############
     b = branch
     bd = branch -d
