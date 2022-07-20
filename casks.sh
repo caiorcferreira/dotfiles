@@ -11,10 +11,10 @@ echo "Installing applications through brew casks..."
 brew update
 
 # Time for some action
-brew install google-chrome
+#brew install google-chrome
 brew install spotify
 brew install iterm2
 brew install notion
-brew install 1Password
+#brew install 1Password
 brew install foxitreader
 brew install visual-studio-code
