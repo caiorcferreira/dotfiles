@@ -39,10 +39,12 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Python setup
 export PATH="/Users/caio.cavalcante/.local/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:${PATH}"
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # Personal directory
 export PATH="$PATH:/opt:$HOME/bin"
+
+# Disable homebrew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Support GNU sed
 newpath=$(brew info gnu-sed | grep -o -E "PATH=(.*)" | cut -d "=" -d "\"" -f2 | envsubst)
