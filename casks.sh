@@ -17,3 +17,5 @@ brew install --cask notion
 brew install --cask foxitreader
 brew install --cask visual-studio-code
 brew install --cask shottr
+brew install --cask raycast
+brew install --cask dash
