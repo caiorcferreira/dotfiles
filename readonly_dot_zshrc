@@ -1,5 +1,17 @@
 typeset -U path cdpath fpath manpath
 
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+export PATH="$PATH:/opt/homebrew/bin"
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 # for profile in ${(z)NIX_PROFILES}; do
 #   fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
 # done
@@ -29,14 +41,12 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
-export PATH="$PATH:/opt/homebrew/bin"
 
 java_setup="$HOME/.asdf/plugins/java/set-java-home.zsh"
 if [[ -e "$java_setup" ]]; then
   . $java_setup
 fi
 
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 # eval "$(/nix/store/8ki6hq0x3mgv75013i2j43iqcggs0h41-zoxide-unstable-2023-11-20/bin/zoxide init zsh )"
 
@@ -71,3 +81,5 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+
+
