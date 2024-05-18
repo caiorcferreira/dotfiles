@@ -1,0 +1,25 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/cask"
+
+{{ range .packages.darwin.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+
+brew "mas"
+
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+
+{{ range .packages.darwin.store_apps -}}
+mas {{ . | quote }}
+{{ end -}}
+EOF
+{{ end -}}

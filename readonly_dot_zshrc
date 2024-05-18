@@ -1,4 +1,3 @@
-
 typeset -U path cdpath fpath manpath
 
 # for profile in ${(z)NIX_PROFILES}; do
@@ -7,16 +6,12 @@ typeset -U path cdpath fpath manpath
 
 # HELPDIR="/nix/store/2lcidpm2mhmma6y0rvkp29j5rzimsh7l-zsh-5.9/share/zsh/$ZSH_VERSION/help"
 
-
-
 # eval $(/nix/store/pzajj7gw0nazs3vzp6jld53q8ird5izr-coreutils-9.4/bin/dircolors -b ~/.dir_colors)
-
 
 # Oh-My-Zsh/Prezto calls compinit during initialization,
 # calling it twice causes slight start up slowdown
 # as all $fpath entries will be traversed again.
 autoload -U compinit && compinit
-
 
 # History options should be set in .zshrc and after oh-my-zsh sourcing.
 # See https://github.com/nix-community/home-manager/issues/177.
@@ -33,12 +28,6 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
-
-
-bindkey "[D" backward-word
-bindkey "[C" forward-word
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
 
 export PATH="$PATH:/opt/homebrew/bin"
 
@@ -62,36 +51,23 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # fi
 
 
-# Aliases
-alias c='clear'
-alias cat='bat'
-alias catp='bat -P'
-alias eza='eza '\''--group-directories-first'\'' '\''--header'\'''
-alias fleeks='cd ~/.local/share/fleek'
-alias k='kubectl'
-alias kc='kubectx'
-alias kn='kubens'
-alias la='eza -a'
-alias latest-fleek-version='nix run https://getfleek.dev/latest.tar.gz -- version'
-alias lg='lazygit'
-alias ll='eza -l'
-alias lla='eza -la'
-alias ls='eza'
-alias lt='eza --tree'
-alias mv='mv -n'
-alias s='cd ~/sandbox'
-alias sand='cd ~/sandbox'
-alias sandbox='cd ~/sandbox'
-alias update-fleek='nix run https://getfleek.dev/latest.tar.gz -- update'
-alias w='cd ~/workspace'
-alias work='cd ~/workspace'
-
 # Named Directory Hashes
-
-
 # source /nix/store/knghc5j619v26v9v0y5xawd7kyb92049-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
 
+if [ -f "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc" ]; then 
+  . "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc"
+fi
 
+# Zoxide: https://github.com/ajeetdsouza/zoxide
+# replaces `cd` with `z` 
+eval "$(zoxide init --cmd cd zsh)"
 
-if [ -f "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc"; fi
+# eza: https://github.com/eza-community/eza/blob/main/INSTALL.md#for-zsh-with-homebrew
+# install shell completions for eza
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    autoload -Uz compinit
+    compinit
+fi

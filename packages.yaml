@@ -1,0 +1,41 @@
+packages:
+  darwin:
+    taps:
+      - "buo/cask-upgrade"
+      - "homebrew/cask-fonts"
+    brews:
+      - "git"
+      - "asdf-vm"
+      - "colima"
+      - "go-task"
+      - "rustup"
+      - "htop"
+      - "gh"
+      - "fzf"
+      - "ripgrep"
+      - "lazygit"
+      - "jq"
+      - "yq-go"
+      - "bat"
+      - "btop"
+      - "eza"
+      - "cheat"
+      - "zoxide"
+      - "fzf"
+    casks:
+      - "1password"
+      - "1password-cli"
+      - "google-chrome"
+      - "iterm2"
+      - "visual-studio-code"
+      - "raycast"
+      - "spotify"
+      - "foxitreader"
+      - "shottr"
+    store_apps:
+      - "1147396723" # whatsapp
+      - "803453959" # slack
+      - "1284863847" # unsplash
+      - "937984704" # amphetamine
+      - "425424353" # the unarchiver
+

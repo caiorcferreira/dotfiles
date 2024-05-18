@@ -1,0 +1,41 @@
+#!/usr/bin/env zsh
+
+# Setup key bindings
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
+alias k="kubectl"
+alias kc="kubectx"
+alias kn="kubens"
+
+alias c="clear"
+
+alias w="cd ~/workspace"
+alias work="cd ~/workspace"
+alias workspace="cd ~/workspace"
+alias s="cd ~/sandbox"
+alias sand="cd ~/sandbox"
+alias sandbox="cd ~/sandbox"
+alias lg="lazygit"
+alias mv="mv -n"
+
+alias ch="chezmoi"
+
+# replace cat with bat
+alias cat="bat"
+# bat --plain for unformatted cat
+alias catp="bat -P"
+
+# replace ls with exa
+alias eza='eza '\''--group-directories-first'\'' '\''--header'\'''
+alias ls="eza"
+alias ld="eza -lD" # lists only directories (no files)
+alias lf="eza -lf --color=always | grep -v /" # lists only files (no directories)
+alias lh="eza -dl .* --group-directories-first" # lists only hidden files (no directories)
+alias ll='eza -l' # lists in details with directories first
+alias la='eza -a' # lists everything with directories first
+alias ls="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
+alias lt="eza -al --sort=modified" # lists everything sorted by time updated
+alias tree="eza --tree"
