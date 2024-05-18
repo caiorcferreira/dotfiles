@@ -2,7 +2,6 @@ packages:
   darwin:
     taps:
       - "buo/cask-upgrade"
-      - "homebrew/cask-fonts"
     brews:
       - "git"
       - "asdf-vm"
@@ -22,6 +21,7 @@ packages:
       - "cheat"
       - "zoxide"
       - "fzf"
+      - "font-hack-nerd-font"
     casks:
       - "1password"
       - "1password-cli"
