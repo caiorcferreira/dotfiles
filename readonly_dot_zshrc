@@ -1,0 +1,97 @@
+
+typeset -U path cdpath fpath manpath
+
+# for profile in ${(z)NIX_PROFILES}; do
+#   fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
+# done
+
+# HELPDIR="/nix/store/2lcidpm2mhmma6y0rvkp29j5rzimsh7l-zsh-5.9/share/zsh/$ZSH_VERSION/help"
+
+
+
+# eval $(/nix/store/pzajj7gw0nazs3vzp6jld53q8ird5izr-coreutils-9.4/bin/dircolors -b ~/.dir_colors)
+
+
+# Oh-My-Zsh/Prezto calls compinit during initialization,
+# calling it twice causes slight start up slowdown
+# as all $fpath entries will be traversed again.
+autoload -U compinit && compinit
+
+
+# History options should be set in .zshrc and after oh-my-zsh sourcing.
+# See https://github.com/nix-community/home-manager/issues/177.
+HISTSIZE="10000"
+SAVEHIST="10000"
+
+HISTFILE="$HOME/.zsh_history"
+mkdir -p "$(dirname "$HISTFILE")"
+
+setopt HIST_FCNTL_LOCK
+setopt HIST_IGNORE_DUPS
+unsetopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+unsetopt HIST_EXPIRE_DUPS_FIRST
+setopt SHARE_HISTORY
+unsetopt EXTENDED_HISTORY
+
+
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
+export PATH="$PATH:/opt/homebrew/bin"
+
+java_setup="$HOME/.asdf/plugins/java/set-java-home.zsh"
+if [[ -e "$java_setup" ]]; then
+  . $java_setup
+fi
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# eval "$(/nix/store/8ki6hq0x3mgv75013i2j43iqcggs0h41-zoxide-unstable-2023-11-20/bin/zoxide init zsh )"
+
+# if [[ $TERM != "dumb" ]]; then
+#   eval "$(/Users/caioferreira/.nix-profile/bin/starship init zsh)"
+# fi
+
+# eval "$(/nix/store/1adjsy0hqr2f38dzbrfbg5pw5az2jd5q-direnv-2.33.0/bin/direnv hook zsh)"
+
+# if [[ $options[zle] = on ]]; then
+#   eval "$(/nix/store/xq7dym7y43izccgi7wqyyp75vw8f74kq-atuin-17.2.1/bin/atuin init zsh )"
+# fi
+
+
+# Aliases
+alias c='clear'
+alias cat='bat'
+alias catp='bat -P'
+alias eza='eza '\''--group-directories-first'\'' '\''--header'\'''
+alias fleeks='cd ~/.local/share/fleek'
+alias k='kubectl'
+alias kc='kubectx'
+alias kn='kubens'
+alias la='eza -a'
+alias latest-fleek-version='nix run https://getfleek.dev/latest.tar.gz -- version'
+alias lg='lazygit'
+alias ll='eza -l'
+alias lla='eza -la'
+alias ls='eza'
+alias lt='eza --tree'
+alias mv='mv -n'
+alias s='cd ~/sandbox'
+alias sand='cd ~/sandbox'
+alias sandbox='cd ~/sandbox'
+alias update-fleek='nix run https://getfleek.dev/latest.tar.gz -- update'
+alias w='cd ~/workspace'
+alias work='cd ~/workspace'
+
+# Named Directory Hashes
+
+
+# source /nix/store/knghc5j619v26v9v0y5xawd7kyb92049-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
+
+
+
+if [ -f "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc"; fi

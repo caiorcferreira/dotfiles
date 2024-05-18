@@ -1,0 +1,72 @@
+[alias]
+	a = "add --all"
+	add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -"
+	aliases = "!git config -l | grep alias | cut -c 7-"
+	ap = "add . -p"
+	b = "branch"
+	bd = "branch -d"
+	bdd = "branch -D"
+	br = "branch -r"
+	ca = "commit --amend"
+	cm = "commit -m"
+	co = "checkout"
+	cob = "checkout -b"
+	cp = "cherry-pick"
+	cpa = "cherry-pick --abort"
+	cpc = "cherry-pick --continue"
+	graph = "log --decorate --oneline --graph"
+	m = "merge"
+	ma = "merge --abort"
+	mc = "merge --continue"
+	ms = "merge --skip"
+	pr = "prune -v"
+	ps = "push"
+	psf = "push -f"
+	pst = "push --tags"
+	psu = "push -u"
+	pushall = "!git remote | xargs -L1 git push --all"
+	rb = "rebase"
+	rba = "rebase --abort"
+	rbc = "rebase --continue"
+	rbi = "rebase --interactive"
+	rbs = "rebase --skip"
+	s = "status"
+	sw = "switch"
+
+[commit]
+	gpgSign = true
+
+[core]
+	editor = "vim"
+	excludesfile = "~/.gitignore"
+	whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol"
+
+[credential]
+	helper = "store"
+
+[feature]
+	manyFiles = true
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "ssh"
+	program = "gpg2"
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = false
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "caiorcferreira@gmail.com"
+	name = "Caio Ferreira"
+	signingKey = "~/.ssh/id_rsa"
