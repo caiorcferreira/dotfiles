@@ -56,9 +56,9 @@ fi
 
 # eval "$(/nix/store/1adjsy0hqr2f38dzbrfbg5pw5az2jd5q-direnv-2.33.0/bin/direnv hook zsh)"
 
-# if [[ $options[zle] = on ]]; then
-#   eval "$(/nix/store/xq7dym7y43izccgi7wqyyp75vw8f74kq-atuin-17.2.1/bin/atuin init zsh )"
-# fi
+if [[ $options[zle] = on ]]; then
+  eval "$(atuin init zsh)"
+fi
 
 
 # Named Directory Hashes
@@ -75,7 +75,7 @@ fi
 eval "$(zoxide init --cmd cd zsh)"
 
 # eza: https://github.com/eza-community/eza/blob/main/INSTALL.md#for-zsh-with-homebrew
-# install shell completions for eza
+# install shell completions for eza if it's installed
 if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
     autoload -Uz compinit

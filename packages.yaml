@@ -21,6 +21,7 @@ packages:
       - "cheat"
       - "zoxide"
       - "fzf"
+      - "atuin"
       - "font-hack-nerd-font"
     casks:
       - "1password"
