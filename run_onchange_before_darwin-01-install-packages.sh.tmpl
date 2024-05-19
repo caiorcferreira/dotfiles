@@ -14,11 +14,11 @@ brew install {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.casks -}}
-brew install --cask {{ . | quote }}
+brew install --cask --force {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.store_apps -}}
-mas install {{ .name | quote }}, id: {{ .id }}
+mas install {{ .id }}
 {{ end -}}
 
 {{ end -}}
