@@ -3,39 +3,22 @@
 
 export PATH="$PATH:/opt/homebrew/bin"
 
-bundle_content=$(cat <<'EOF'
 {{ range .packages.darwin.taps -}}
-tap {{ . | quote }}
+brew tap {{ . | quote }}
 {{ end -}}
 
-brew "mas"
+brew install "mas"
 
 {{ range .packages.darwin.brews -}}
-brew {{ . | quote }}
+brew install {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.casks -}}
-cask {{ . | quote }}, greedy: true
+brew install --cask {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.store_apps -}}
-mas {{ .name | quote }}, id: {{ .id }}
+mas install {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-EOF
-)
-
-tmpfile=$(mktemp)
-
-echo "Writing bundlefile to $tmpfile"
-
-echo "$bundle_content" > "$tmpfile"
-
-brew bundle --no-lock --file="$tmpfile" || true
-
-status=$(echo $?)
-
-echo "Bundle ended with status $status"
-
-rm -f "$tmpfile"
 
 {{ end -}}
