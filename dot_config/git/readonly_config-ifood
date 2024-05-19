@@ -1,0 +1,4 @@
+[user]
+	email = "caio.cavalcante@ifood.com"
+	name = "Caio Cavalcante"
+	signingKey = "~/.ssh/id_rsa"

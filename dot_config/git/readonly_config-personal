@@ -1,0 +1,4 @@
+[user]
+	email = "caiorcferreira@gmail.com"
+	name = "Caio Ferreira"
+	signingKey = "~/.ssh/id_rsa"
