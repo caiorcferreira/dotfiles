@@ -21,5 +21,6 @@ cask {{ . | quote }}, greedy: true
 {{ range .packages.darwin.store_apps -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-EOF
+EOF || true
+
 {{ end -}}
