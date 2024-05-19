@@ -3,6 +3,8 @@
 
 sudo -v
 
+xcode-select --install
+
 # Install brew if not installed
 if ! type brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
