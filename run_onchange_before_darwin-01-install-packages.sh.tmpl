@@ -15,7 +15,7 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.casks -}}
-cask {{ . | quote }}
+cask {{ . | quote }}, greedy: true
 {{ end -}}
 
 {{ range .packages.darwin.store_apps -}}
