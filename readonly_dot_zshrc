@@ -12,10 +12,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# for profile in ${(z)NIX_PROFILES}; do
-#   fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
-# done
-
 # HELPDIR="/nix/store/2lcidpm2mhmma6y0rvkp29j5rzimsh7l-zsh-5.9/share/zsh/$ZSH_VERSION/help"
 
 # eval $(/nix/store/pzajj7gw0nazs3vzp6jld53q8ird5izr-coreutils-9.4/bin/dircolors -b ~/.dir_colors)
@@ -48,29 +44,19 @@ if [[ -e "$java_setup" ]]; then
 fi
 
 
-# eval "$(/nix/store/8ki6hq0x3mgv75013i2j43iqcggs0h41-zoxide-unstable-2023-11-20/bin/zoxide init zsh )"
-
-# if [[ $TERM != "dumb" ]]; then
-#   eval "$(/Users/caioferreira/.nix-profile/bin/starship init zsh)"
-# fi
-
-# eval "$(/nix/store/1adjsy0hqr2f38dzbrfbg5pw5az2jd5q-direnv-2.33.0/bin/direnv hook zsh)"
+if [[ $TERM != "dumb" ]]; then
+  eval "$(starship init zsh)"
+fi
 
 if [[ $options[zle] = on ]]; then
   eval "$(atuin init zsh)"
 fi
 
-
-# Named Directory Hashes
-# source /nix/store/knghc5j619v26v9v0y5xawd7kyb92049-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
-
 if [ -f "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc" ]; then 
   . "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc"
 fi
 
-# Zoxide: https://github.com/ajeetdsouza/zoxide
+# zoxide: https://github.com/ajeetdsouza/zoxide
 # replaces `cd` with `z` 
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -80,6 +66,12 @@ if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
     autoload -Uz compinit
     compinit
+fi
+
+# Computes syntax highlighting
+# Should be at the end of the file
+if type brew &>/dev/null; then
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 
