@@ -36,6 +36,5 @@ alias lf="eza -lf --color=always | grep -v /" # lists only files (no directories
 alias lh="eza -dl .* --group-directories-first" # lists only hidden files (no directories)
 alias ll='eza -l' # lists in details with directories first
 alias la='eza -a' # lists everything with directories first
-alias ls="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
 alias lt="eza -al --sort=modified" # lists everything sorted by time updated
 alias tree="eza --tree"
