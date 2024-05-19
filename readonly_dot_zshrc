@@ -45,7 +45,7 @@ fi
 if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
 
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+  source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 if [[ $options[zle] = on ]]; then
@@ -71,7 +71,7 @@ fi
 # Computes syntax highlighting
 # Should be at the end of the file
 if type brew &>/dev/null; then
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 
