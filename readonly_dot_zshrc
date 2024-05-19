@@ -37,15 +37,15 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
-
 java_setup="$HOME/.asdf/plugins/java/set-java-home.zsh"
 if [[ -e "$java_setup" ]]; then
   . $java_setup
 fi
 
-
 if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
+
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 if [[ $options[zle] = on ]]; then
