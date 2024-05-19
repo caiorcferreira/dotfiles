@@ -4,7 +4,7 @@ packages:
       - "buo/cask-upgrade"
     brews:
       - "git"
-      - "asdf-vm"
+      - "asdf"
       - "colima"
       - "go-task"
       - "rustup"
