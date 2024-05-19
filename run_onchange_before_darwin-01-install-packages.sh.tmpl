@@ -4,8 +4,6 @@
 export PATH="$PATH:/opt/homebrew/bin"
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
-tap "homebrew/cask"
-
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}
 {{ end -}}
