@@ -34,9 +34,14 @@ packages:
       - "foxitreader"
       - "shottr"
     store_apps:
-      - "1147396723" # whatsapp
-      - "803453959" # slack
-      - "1284863847" # unsplash
-      - "937984704" # amphetamine
-      - "425424353" # the unarchiver
+      - name: "WhatsApp Desktop"
+        id: 1147396723
+      - name: "Slack for Desktop"
+        id: 803453959
+      - name: "Unsplash Wallpapers"
+        id: 1284863847
+      - name: "Amphetamine"
+        id: 937984704
+      - name: "The Unarchiver"
+        id: 425424353
 
