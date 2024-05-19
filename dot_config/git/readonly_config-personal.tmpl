@@ -1,4 +1,4 @@
 [user]
-	email = {{ $email := promptStringOnce . "email" "What is your personal email address for git commit?" }}
+	email = {{ .me.email | quote }}
 	name = "Caio Ferreira"
 	signingKey = "~/.ssh/id_rsa"
