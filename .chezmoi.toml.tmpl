@@ -4,6 +4,6 @@
 
 {{ $email := promptString "email" -}}
 {{ $workEmail := promptString "workEmail" -}}
-[data]:
+[data]
     email = {{ $email | quote }}
     workEmail = {{ $workEmail | quote }}
