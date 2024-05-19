@@ -96,8 +96,8 @@
 	defaultBranch = main
 
 [includeIf "gitdir:~/workspace"]
-  path = ~/.config/git/config-personal
+  path = config-personal
 [includeIf "gitdir:~/sandbox"]
-  path = ~/.config/git/config-personal
+  path = config-personal
 [includeIf "gitdir:~/ifood"]
-  path = ~/.config/git/config-ifood
+  path = config-ifood
