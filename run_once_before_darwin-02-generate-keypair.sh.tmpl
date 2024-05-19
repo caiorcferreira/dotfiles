@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Specify the path where the SSH key should be stored
+KEY_PATH="$HOME/.ssh/id_rsa"
+
+# Check if the key already exists
+if [ ! -f "$KEY_PATH" ]; then
+  # If the key does not exist, generate a new RSA key pair
+  ssh-keygen -t rsa -b 4096 -C {{ $email := promptStringOnce . "email" "What is your email address" }} -f "$KEY_PATH" -N ""
+else
+  echo "RSA key already exists at $KEY_PATH."
+fi
