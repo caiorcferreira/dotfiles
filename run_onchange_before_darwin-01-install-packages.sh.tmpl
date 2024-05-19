@@ -21,7 +21,7 @@ cask {{ . | quote }}
 {{ end -}}
 
 {{ range .packages.darwin.store_apps -}}
-mas {{ . | quote }}
+mas {{ . }}
 {{ end -}}
 EOF
 {{ end -}}
