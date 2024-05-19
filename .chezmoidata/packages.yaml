@@ -14,7 +14,7 @@ packages:
       - "ripgrep"
       - "lazygit"
       - "jq"
-      - "yq-go"
+      - "yq"
       - "bat"
       - "btop"
       - "eza"
