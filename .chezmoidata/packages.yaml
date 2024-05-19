@@ -22,7 +22,7 @@ packages:
       - "zoxide"
       - "fzf"
       - "atuin"
-      - "font-hack-nerd-font"
+      - "powerlevel10k"
     casks:
       - "1password"
       - "1password-cli"
