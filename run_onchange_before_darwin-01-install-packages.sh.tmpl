@@ -3,7 +3,7 @@
 
 export PATH="$PATH:/opt/homebrew/bin"
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+bundle_content=$(cat <<'EOF'
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}
 {{ end -}}
@@ -21,6 +21,15 @@ cask {{ . | quote }}, greedy: true
 {{ range .packages.darwin.store_apps -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-EOF || true
+EOF
+)
+
+tmpfile=$(mktemp)
+
+echo "$bundle_content" > "$tmpfile"
+
+brew bundle --no-lock --file="$tmpfile" || true
+
+rm -f "$tmpfile"
 
 {{ end -}}
