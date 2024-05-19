@@ -46,6 +46,7 @@ if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
 
   source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+  source $HOME/.config/pk10/pk10-theme-settings.zsh
 fi
 
 if [[ $options[zle] = on ]]; then
