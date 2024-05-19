@@ -22,6 +22,7 @@ packages:
       - "zoxide"
       - "fzf"
       - "atuin"
+      - "starship"
       - "powerlevel10k"
     casks:
       - "1password"
