@@ -6,6 +6,11 @@ Add brew (core, taps and Mac Apple Store) packages to `.chezmoidata/packages.yam
 
 ## New machine
 
+First, insgall xcode command line tools:
+```bash
+xcode-select --install
+```
+
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply caiorcferreira
 ```
