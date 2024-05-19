@@ -26,9 +26,15 @@ EOF
 
 tmpfile=$(mktemp)
 
+echo "Writing bundlefile to $tmpfile"
+
 echo "$bundle_content" > "$tmpfile"
 
 brew bundle --no-lock --file="$tmpfile" || true
+
+status=$(echo $?)
+
+echo "Bundle ended with status $status"
 
 rm -f "$tmpfile"
 
