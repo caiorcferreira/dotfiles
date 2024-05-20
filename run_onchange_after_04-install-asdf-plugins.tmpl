@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+asdf plugin add golang
+asdf plugin add python
+
+asdf install
+
+{{ end -}}
