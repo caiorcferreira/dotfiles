@@ -67,6 +67,11 @@ if type brew &>/dev/null; then
     compinit
 fi
 
+# Add ghcs alias for copilot suggestion
+if type gh &>/dev/null; then
+  eval "$(gh copilot alias -- zsh)"
+fi
+
 # Computes syntax highlighting
 # Should be at the end of the file
 if type brew &>/dev/null; then
