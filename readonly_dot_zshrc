@@ -12,10 +12,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# HELPDIR="/nix/store/2lcidpm2mhmma6y0rvkp29j5rzimsh7l-zsh-5.9/share/zsh/$ZSH_VERSION/help"
-
-# eval $(/nix/store/pzajj7gw0nazs3vzp6jld53q8ird5izr-coreutils-9.4/bin/dircolors -b ~/.dir_colors)
-
 # Oh-My-Zsh/Prezto calls compinit during initialization,
 # calling it twice causes slight start up slowdown
 # as all $fpath entries will be traversed again.
@@ -36,6 +32,8 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
+
+"$(brew --prefix asdf)/libexec/asdf.sh"
 
 java_setup="$HOME/.asdf/plugins/java/set-java-home.zsh"
 if [[ -e "$java_setup" ]]; then

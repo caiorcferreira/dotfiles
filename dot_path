@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export PATH="$HOME/bin:$PATH";
+export PATH="$PATH:/opt/homebrew/bin"
+
+export PATH="$PATH:$HOME/.asdf/shims"
