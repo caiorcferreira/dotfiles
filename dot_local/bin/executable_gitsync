@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Fetch the origin
+git fetch origin
+
+# Get the default branch name
+default_branch=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+
+# Rebase the default branch from origin into the current branch
+git rebase origin/$default_branch
