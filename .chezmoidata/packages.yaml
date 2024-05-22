@@ -25,6 +25,7 @@ packages:
       - "starship"
       - "powerlevel10k"
       - "kubectl"
+      - "pre-commit"
     casks:
       - "1password"
       - "1password-cli"
