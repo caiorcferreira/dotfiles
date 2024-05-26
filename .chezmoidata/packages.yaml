@@ -37,6 +37,8 @@ packages:
       - "foxitreader"
       - "shottr"
       - "obsidian"
+      - "postman"
+      - "zoom"
     store_apps:
       - name: "WhatsApp Desktop"
         id: 1147396723
@@ -48,4 +50,3 @@ packages:
         id: 937984704
       - name: "The Unarchiver"
         id: 425424353
-
