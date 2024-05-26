@@ -4,6 +4,9 @@
 
 {{ $email := promptString "email" -}}
 {{ $workEmail := promptString "workEmail" -}}
+{{- $profileTypes := list "personal" "work" -}}
+{{- $profile := promptChoiceOnce . "profile" "Which host profile you want to set up?" $profileTypes -}}
 [data]
+    profile = {{ $profile | quote }}
     email = {{ $email | quote }}
     workEmail = {{ $workEmail | quote }}
