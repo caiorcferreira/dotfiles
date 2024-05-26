@@ -4,4 +4,8 @@
 [user]
 	email = {{ .email | quote }}
 	name = "Caio Ferreira"
-	signingkey = "~/.ssh/id_rsa_personal"
+	{{- $profileKey := "~/.ssh/id_rsa" }}
+	{{- if (eq .profile "work") }}
+	{{- $profileKey = "~/.ssh/id_rsa_personal" }}
+	{{- end }}
+	signingkey = {{ $profileKey | quote }}

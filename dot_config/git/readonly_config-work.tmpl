@@ -1,0 +1,11 @@
+[gpg]
+	format = "ssh"
+
+[user]
+	email = {{ .workEmail | quote }}
+	name = "Caio Cavalcante"
+	{{- $profileKey := "~/.ssh/id_rsa" }}
+	{{- if (eq .profile "personal") }}
+	{{- $profileKey = "~/.ssh/id_rsa_work" }}
+	{{- end }}
+	signingkey = {{ $profileKey | quote }}

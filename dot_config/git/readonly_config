@@ -102,4 +102,4 @@
 [includeIf "gitdir:~/.local/share/"]
   path = config-personal
 [includeIf "gitdir:~/ifood/"]
-  path = config-ifood
+  path = config-work

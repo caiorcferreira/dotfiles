@@ -1,20 +1,5 @@
 #!/bin/bash
 
-{{- $profileEmail := .email }}
-{{- $alternateEmail := .workEmail }}
-{{- $alternateProfile := "work" }}
-
-{{- if (eq .profile "work") }}
-{{- $profileEmail = .workEmail }}
-{{- $alternateEmail = .email }}
-{{- $alternateProfile := "personal" }}
-{{- end }}
-
-# Specify the path where the SSH key should be stored
-PROFILE_KEY_PATH="$HOME/.ssh/id_rsa"
-ALTERNATE_KEY_PATH="$HOME/.ssh/id_rsa_{{ $alternateProfile }}"
-
-
 generate_keypair() {
   KEY_PATH=$1
   EMAIL=$2
@@ -27,6 +12,22 @@ generate_keypair() {
     echo "RSA key already exists at $KEY_PATH."
   fi
 }
+
+{{- $profileEmail := .email }}
+
+{{- $alternateEmail := .workEmail }}
+{{- $alternateProfile := "work" }}
+
+{{- if (eq .profile "work") }}
+{{- $profileEmail = .workEmail }}
+
+{{- $alternateEmail = .email }}
+{{- $alternateProfile = "personal" }}
+{{- end }}
+
+# Specify the path where the SSH key should be stored
+PROFILE_KEY_PATH="$HOME/.ssh/id_rsa"
+ALTERNATE_KEY_PATH="$HOME/.ssh/id_rsa_{{ $alternateProfile }}"
 
 # Generate the key pair for the profile
 generate_keypair "$PROFILE_KEY_PATH" {{ $profileEmail | quote }}
