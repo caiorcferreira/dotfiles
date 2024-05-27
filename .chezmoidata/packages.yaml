@@ -26,6 +26,7 @@ packages:
       - "powerlevel10k"
       - "kubectl"
       - "pre-commit"
+      - "awscli"
     casks:
       - "1password"
       - "1password-cli"
