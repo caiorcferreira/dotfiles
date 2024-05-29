@@ -3,6 +3,7 @@ packages:
     taps:
       - "buo/cask-upgrade"
     brews:
+      - "poetry"
       - "git"
       - "asdf"
       - "colima"
