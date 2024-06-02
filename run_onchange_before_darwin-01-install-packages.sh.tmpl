@@ -10,15 +10,21 @@ brew tap {{ . | quote }}
 brew install "mas"
 
 {{ range .packages.darwin.brews -}}
-brew install {{ . | quote }}
+if ! brew list {{ . | quote }} > /dev/null 2>&1; then
+  brew install {{ . | quote }}
+fi
 {{ end -}}
 
 {{ range .packages.darwin.casks -}}
-brew install --cask --force {{ . | quote }}
+if ! brew list --cask {{ . | quote }} > /dev/null 2>&1; then
+  brew install --cask --force {{ . | quote }}
+fi
 {{ end -}}
 
 {{ range .packages.darwin.store_apps -}}
-mas install {{ .id }}
+if ! mas list | grep -q {{ .id }}; then
+  mas install {{ .id }}
+fi
 {{ end -}}
 
 {{ end -}}
