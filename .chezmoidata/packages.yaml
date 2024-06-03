@@ -26,6 +26,7 @@ packages:
       - "starship"
       - "powerlevel10k"
       - "kubectl"
+      - "kubectx"
       - "pre-commit"
       - "awscli"
       - "poetry"
