@@ -31,6 +31,7 @@ packages:
       - "poetry"
     casks:
       - "font-hack-nerd-font"
+      - "jetbrains-toolbox"
       - "1password"
       - "1password-cli"
       - "google-chrome"
