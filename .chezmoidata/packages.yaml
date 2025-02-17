@@ -32,6 +32,7 @@ packages:
       - "awscli"
       - "poetry"
     casks:
+      - "ghostty"
       - "font-hack-nerd-font"
       - "jetbrains-toolbox"
       - "1password"
