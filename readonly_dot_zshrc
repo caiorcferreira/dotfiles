@@ -33,7 +33,12 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
-"$(brew --prefix asdf)/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+if [ ! -f "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf" ]; then
+  mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+  asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
+fi
 
 java_setup="$HOME/.asdf/plugins/java/set-java-home.zsh"
 if [[ -e "$java_setup" ]]; then
