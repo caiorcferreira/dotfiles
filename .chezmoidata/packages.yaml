@@ -32,6 +32,7 @@ packages:
       - "awscli"
       - "poetry"
       - "repomix"
+      - "llm"
     casks:
       - "ghostty"
       - "font-hack-nerd-font"
