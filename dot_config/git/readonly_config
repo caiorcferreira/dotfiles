@@ -101,5 +101,7 @@
   path = config-personal
 [includeIf "gitdir:~/.local/share/"]
   path = config-personal
+[includeIf "gitdir:~/personal/"]
+  path = config-personal
 [includeIf "gitdir:~/ifood/"]
   path = config-work
