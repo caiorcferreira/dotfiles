@@ -33,6 +33,7 @@ packages:
       - "poetry"
       - "repomix"
       - "llm"
+      - "uv"
     casks:
       - "ghostty"
       - "font-hack-nerd-font"
