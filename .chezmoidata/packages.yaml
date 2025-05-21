@@ -50,6 +50,7 @@ packages:
       - "obsidian"
       - "postman"
       - "zoom"
+      - "aldente"
     store_apps:
       - name: "WhatsApp Desktop"
         id: 1147396723
