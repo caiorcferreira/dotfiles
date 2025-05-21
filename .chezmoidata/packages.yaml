@@ -52,6 +52,7 @@ packages:
       - "zoom"
       - "aldente"
       - "chatgpt"
+      - "discord"
     store_apps:
       - name: "WhatsApp Desktop"
         id: 1147396723
