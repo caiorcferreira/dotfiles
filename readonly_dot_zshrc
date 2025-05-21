@@ -61,8 +61,8 @@ if [[ $options[zle] = on ]]; then
   eval "$(atuin init zsh)"
 fi
 
-if [ -f "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc" ]; then 
-  . "/Users/caioferreira/.config/fabric/fabric-bootstrap.inc"
+if [ -f "~/.config/fabric/fabric-bootstrap.inc" ]; then 
+  . "~/.config/fabric/fabric-bootstrap.inc"
 fi
 
 # zoxide: https://github.com/ajeetdsouza/zoxide
