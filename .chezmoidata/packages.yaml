@@ -7,6 +7,7 @@ packages:
       - "git"
       - "asdf"
       - "colima"
+      - "docker"
       - "go-task"
       - "rustup"
       - "htop"
