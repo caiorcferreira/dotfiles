@@ -8,6 +8,7 @@ packages:
       - "asdf"
       - "colima"
       - "docker"
+      - "docker-compose"
       - "go-task"
       - "rustup"
       - "htop"
