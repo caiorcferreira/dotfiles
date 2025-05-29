@@ -73,3 +73,6 @@
 #   "^secret-cmd",
 #   "^innocuous-cmd .*--secret=.+"
 # ]
+
+
+ctrl_n_shortcuts = true
