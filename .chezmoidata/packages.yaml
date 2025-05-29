@@ -36,6 +36,7 @@ packages:
       - "repomix"
       - "llm"
       - "uv"
+      - "direnv"
     casks:
       - "ghostty"
       - "font-hack-nerd-font"
