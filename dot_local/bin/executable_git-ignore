@@ -9,4 +9,4 @@ for t in "${@}"; do
 done
 
 
-curl -sSL https://www.gitignore.io/api/${tags} > .gitignore
+curl -sSL https://www.gitignore.io/api/${tags} >> .gitignore
