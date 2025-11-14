@@ -95,3 +95,8 @@ fi
 if type direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+if command -v asdf >/dev/null 2>&1 && asdf where dotnet-core >/dev/null 2>&1; then
+    export DOTNET_ROOT
+    DOTNET_ROOT="$(asdf where dotnet-core)"
+fi
