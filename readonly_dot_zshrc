@@ -46,9 +46,9 @@ if [[ -e "$java_setup" ]]; then
 fi
 
 if [ -d "$HOME/.asdf/plugins/nodejs" ]; then
-  export PATH=$PATH:$(npm config get prefix)/bin
+  mkdir -p "$HOME/bin"
+  npm config set prefix "$HOME"
 fi
-
 
 if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
