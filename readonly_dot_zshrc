@@ -66,8 +66,10 @@ if [ -f "~/.config/fabric/fabric-bootstrap.inc" ]; then
 fi
 
 # zoxide: https://github.com/ajeetdsouza/zoxide
-# replaces `cd` with `z` 
-eval "$(zoxide init --cmd cd zsh)"
+# replaces `cd` with `z` only in interactive shells
+if [[ "$-" == *i* ]] && command -v zoxide &>/dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # eza: https://github.com/eza-community/eza/blob/main/INSTALL.md#for-zsh-with-homebrew
 # install shell completions for eza if it's installed
